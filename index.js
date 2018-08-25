@@ -1,9 +1,9 @@
-var express = require('express');
-var app = express();
+var http = new require('http');
 
-app.get('/', function(req, res) {
-	res.send('working');
-});
+var app = http.createServer(function(req, res) {
+	res.write('Hello World!');
+	res.end();
+  });  
 
 app.listen(3000);
 console.log('API running on port 3000.');
